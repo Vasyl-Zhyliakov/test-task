@@ -1,14 +1,17 @@
-import { useRef, useEffect } from "react";
-import "./parallaxContainer.scss";
-import ButtonBg from "../svg/ButtonBg";
-import ButtonIcon from "../svg/ButtonIcon";
-import Sprite from "../svg/Sprite";
-import BigLogo from "../svg/BigLogo";
-import ScrambleText from "../ScrambleText/ScrambleText";
-import ButtonLayer1 from "../svg/ButtonLayer1";
-import ButtonLayer2 from "../svg/ButtonLayer2";
-import ButtonSecondIcon from "../svg/ButtonSecondIcon";
-import cn from "classnames";
+import { useRef, useEffect } from 'react';
+import './parallaxContainer.scss';
+import ButtonBg from '../svg/ButtonBg';
+import ButtonIcon from '../svg/ButtonIcon';
+import Sprite from '../svg/Sprite';
+import BigLogo from '../svg/BigLogo';
+import ScrambleText from '../ScrambleText/ScrambleText';
+import ButtonLayer1 from '../svg/ButtonLayer1';
+import ButtonLayer2 from '../svg/ButtonLayer2';
+import ButtonSecondIcon from '../svg/ButtonSecondIcon';
+import cn from 'classnames';
+import background from '../../assets/images/background.png';
+import marvelTheater from '../../assets/images/marvel-theater.png';
+import polygone from '../../assets/images/icons/polygon.png';
 
 type Props = {
   isStart: boolean;
@@ -37,12 +40,12 @@ export default function ParallaxContainer({ isStart, setIsStart }: Props) {
 
     const container = containerRef.current;
     if (container) {
-      container.addEventListener("mousemove", handleMouseMove);
+      container.addEventListener('mousemove', handleMouseMove);
     }
 
     return () => {
       if (container) {
-        container.removeEventListener("mousemove", handleMouseMove);
+        container.removeEventListener('mousemove', handleMouseMove);
       }
     };
   }, []);
@@ -53,17 +56,12 @@ export default function ParallaxContainer({ isStart, setIsStart }: Props) {
 
   return (
     <div
-      className={cn("parallax-container", {
-        "parallax-container--done": isStart,
+      className={cn('parallax-container', {
+        'parallax-container--done': isStart,
       })}
       ref={containerRef}
     >
-      <img
-        ref={imageRef}
-        src="src/assets/images/background.png"
-        alt="Parallax Background"
-        className="parallax-image"
-      />
+      <img ref={imageRef} src={background} alt="Parallax Background" className="parallax-image" />
 
       <div className="content">
         <div className="start__button">
@@ -92,10 +90,7 @@ export default function ParallaxContainer({ isStart, setIsStart }: Props) {
           <div className="logos">
             <Sprite />
             <span>×</span>
-            <img
-              src="../src/assets/images/marvel-theater.png"
-              alt="Marvels' Black Panther Wakanda Forever only in theater"
-            />
+            <img src={marvelTheater} alt="Marvels' Black Panther Wakanda Forever only in theater" />
           </div>
 
           <div className="main-logo-block">
@@ -131,11 +126,11 @@ export default function ParallaxContainer({ isStart, setIsStart }: Props) {
               </div>
 
               <div className="main-logo-polygone main-logo-polygone--left">
-                <img src="src/assets/images/icons/polygon.png" alt="polygone" />
+                <img src={polygone} alt="polygone" />
               </div>
 
               <div className="main-logo-polygone main-logo-polygone--right">
-                <img src="src/assets/images/icons/polygon.png" alt="polygone" />
+                <img src={polygone} alt="polygone" />
               </div>
             </div>
           </div>
@@ -186,10 +181,7 @@ export default function ParallaxContainer({ isStart, setIsStart }: Props) {
 
         <div className="footer">
           <Sprite />
-          <img
-            src="../src/assets/images/marvel-theater.png"
-            alt="Marvels' Black Panther Wakanda Forever only in theater"
-          />
+          <img src={marvelTheater} alt="Marvels' Black Panther Wakanda Forever only in theater" />
           <div className="footer__text">Sprite Zero Sugar® | © MARVEL</div>
         </div>
       </div>
