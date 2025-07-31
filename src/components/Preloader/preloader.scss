@@ -1,0 +1,101 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  background-image: url(../../assets/images/loader-bg.webp),
+    linear-gradient(rgba(32, 35, 33, 0.9), rgba(32, 35, 33, 0.9)),
+    url(../../assets/images/menu-bg.webp);
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #aaffcc;
+  font-family: "Cinzel", serif;
+  transition: all 1s ease;
+  z-index: 10;
+
+  &--done {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .logos {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .logos svg {
+    height: 56px;
+    width: 80px;
+    transform: translateX(-100px);
+    animation: slideInLeft 1s ease-out forwards;
+  }
+
+  .logos img {
+    height: 56px;
+    width: 100px;
+    transform: translateX(100px);
+    animation: slideInRight 1s ease-out forwards;
+  }
+
+  .title {
+    margin: 32px 0 44px 0;
+  }
+
+  .title svg {
+    height: 75px;
+    width: 268px;
+    transform: translateY(20px);
+    animation: slideInUp 1s ease-out forwards;
+  }
+
+  .progress {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .bar {
+    height: 2px;
+    width: 0;
+    background: #333;
+    margin-bottom: 0.5rem;
+    animation: widthGrow 0.5s ease-in forwards;
+  }
+
+  .fill {
+    height: 100%;
+    background: #0f0;
+    transition: width 0.3s ease;
+  }
+
+  .percent {
+    font-size: 0.8rem;
+  }
+}
+
+@keyframes slideInLeft {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes widthGrow {
+  to {
+    width: 264px;
+  }
+}
