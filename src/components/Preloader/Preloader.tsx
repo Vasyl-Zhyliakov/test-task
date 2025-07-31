@@ -3,7 +3,7 @@ import './preloader.scss';
 import Sprite from '../svg/Sprite';
 import Logo from '../svg/Logo';
 import cn from 'classnames';
-import marvelTheater from '../assets/images/marvel-theater.png';
+import marvelTheater from '../../assets/images/marvel-theater.png';
 
 type Props = {
   isLoad: boolean;
