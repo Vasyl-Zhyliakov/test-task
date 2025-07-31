@@ -1,5 +1,5 @@
-import { useRef, useState } from "react";
-import "./videoContainer.scss";
+import { useRef, useState } from 'react';
+import './videoContainer.scss';
 
 export default function VideoContainer() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -7,7 +7,7 @@ export default function VideoContainer() {
 
   const handleMute = () => {
     const video = videoRef.current;
-    console.log("videoRef.current", videoRef.current);
+    console.log('videoRef.current', videoRef.current);
     if (!video) return;
 
     video.muted = !video.muted;
@@ -25,7 +25,7 @@ export default function VideoContainer() {
       className="video-bg"
       onClick={handleMute}
     >
-      <source src="/Wakanda_Forever_Official_Teaser.mp4" type="video/mp4" />
+      <source src="./Wakanda_Forever_Official_Teaser.mp4" type="video/mp4" />
     </video>
   );
 }
