@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
-import "./preloader.scss";
-import Sprite from "../svg/Sprite";
-import Logo from "../svg/Logo";
-import cn from "classnames";
+import { useState, useEffect } from 'react';
+import './preloader.scss';
+import Sprite from '../svg/Sprite';
+import Logo from '../svg/Logo';
+import cn from 'classnames';
+import marvelTheater from '../assets/images/marvel-theater.png';
 
 type Props = {
   isLoad: boolean;
@@ -33,17 +34,14 @@ export default function Preloader({ isLoad, setIsload }: Props) {
 
   return (
     <div
-      className={cn("preloader", {
-        "preloader--done": isLoad,
+      className={cn('preloader', {
+        'preloader--done': isLoad,
       })}
     >
       <div className="logos">
         <Sprite />
         <span>×</span>
-        <img
-          src="../src/assets/images/marvel-theater.png"
-          alt="Marvels' Black Panther Wakanda Forever only in theater"
-        />
+        <img src={marvelTheater} alt="Marvels' Black Panther Wakanda Forever only in theater" />
       </div>
 
       <div className="title">

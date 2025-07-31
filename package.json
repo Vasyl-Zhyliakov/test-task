@@ -13,7 +13,7 @@
     "lint:css": "stylelint '**/*.scss'",
     "lint:fix": "stylelint '**/*.scss' --fix",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist -b gh-pages -r https://github.com/Vasyl-Zhyliakov/test-task.git"
   },
   "dependencies": {
     "classnames": "^2.5.1",
